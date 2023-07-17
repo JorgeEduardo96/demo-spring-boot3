@@ -19,7 +19,7 @@ To use normal images:
 docker build -t <YOUR_IMAGE_NAME> .
 ```
 
-To use nativa images:
+To use native images:
 
 ```
 mvn -Pnative spring-boot:build-image
