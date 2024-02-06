@@ -14,6 +14,7 @@ import pt.com.example.springboot3.repositories.ProductRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
@@ -42,6 +43,12 @@ public class ProductController {
                     product.add(linkTo(methodOn(ProductController.class).getOneProduct(product.getId())).withSelfRel()));
         }
         return products;
+    }
+
+    @GetMapping("/test")
+    public String getProductTest() {
+        List<ProductModel> products = repository.findAll();
+        return products.get(new Random().nextInt((products.size()))).toString();
     }
 
     @GetMapping("/{id}")

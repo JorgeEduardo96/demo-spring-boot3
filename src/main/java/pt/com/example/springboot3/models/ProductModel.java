@@ -30,4 +30,11 @@ public class ProductModel extends RepresentationModel<ProductModel> implements S
     @Column(name = "product_value")
     private BigDecimal value;
 
+    @Override
+    public String toString() {
+        return "{" +
+                "name='" + name + '\'' +
+                ", value=" + value +
+                '}';
+    }
 }
